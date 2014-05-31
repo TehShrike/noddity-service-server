@@ -1,6 +1,6 @@
 {
   "name": "noddity-service-server",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A server for making servers",
   "main": "index.js",
   "scripts": {
