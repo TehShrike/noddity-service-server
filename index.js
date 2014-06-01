@@ -25,7 +25,8 @@ module.exports = function(serverImplementation) {
 
 	function getAppropriateButler(rootUrl) {
 		if (!butlers.has(rootUrl)) {
-			var db = level(joinPath('/tmp', sanitize(rootUrl)))
+			var prefix = process.env.BRANCH || 'branch-name-here'
+			var db = level(joinPath('/tmp', sanitize(prefix + rootUrl)))
 			var butler = new Butler(rootUrl, db)
 			butlers.set(rootUrl, butler)
 		}
