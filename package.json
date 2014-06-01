@@ -1,6 +1,6 @@
 {
   "name": "noddity-service-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A server for making servers",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/TehShrike/noddity-service-server/issues"
   },
-  "homepage": "https://github.com/TehShrike/noddity-service-server"
+  "homepage": "https://github.com/TehShrike/noddity-service-server",
+  "dependencies": {
+    "level": "^0.18.0",
+    "noddity-butler": "^1.1.2",
+    "noddity-linkifier": "^1.0.0",
+    "sanitize-filename": "^1.0.1",
+    "stringmap": "^0.2.2"
+  }
 }
