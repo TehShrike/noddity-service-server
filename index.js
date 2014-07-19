@@ -2,10 +2,10 @@ var url = require('url')
 var qs = require('querystring')
 var StringMap = require('stringmap')
 var Butler = require('noddity-butler')
-var level = require('level')
 var sanitize = require("sanitize-filename")
-var joinPath = require('path').join
 var Linkifier = require('noddity-linkifier')
+var levelup = require('levelup')
+var redisdown = require('redisdown')
 
 function dumbResolve(firstThingy, secondThingy) {
 	var separator = '/'
@@ -26,7 +26,11 @@ module.exports = function(serverImplementation) {
 	function getAppropriateButler(rootUrl) {
 		if (!butlers.has(rootUrl)) {
 			var prefix = process.env.BRANCH || 'branch-name-here'
-			var db = level(joinPath('/tmp', sanitize(prefix + rootUrl)))
+			var db = levelup(prefix + sanitize(rootUrl), {
+				db: redisdown,
+				host: 'localhost',
+				port: 6379
+			})
 			var butler = new Butler(rootUrl, db)
 			butlers.set(rootUrl, butler)
 		}
