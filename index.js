@@ -48,7 +48,7 @@ module.exports = function(serverImplementation) {
 				url: req.url,
 				parameters: parameters,
 				butler: butler,
-				linkify: linkify,
+				linkify: linkify.linkify,
 				resolvePost: dumbResolve.bind(null, parameters.postUrlRoot)
 			}
 
