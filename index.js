@@ -25,7 +25,7 @@ module.exports = function(serverImplementation) {
 
 	function getAppropriateButler(rootUrl) {
 		if (!butlers.has(rootUrl)) {
-			var prefix = process.env.BRANCH || 'branch-name-here'
+			var prefix = process.env.BRANCH || 'noddity-service-server-2'
 			var db = levelup(prefix + sanitize(rootUrl), {
 				db: redisdown,
 				host: 'localhost',
