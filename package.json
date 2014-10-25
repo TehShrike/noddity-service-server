@@ -1,6 +1,6 @@
 {
   "name": "noddity-service-server",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A server for making servers",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "dependencies": {
     "levelup": "^0.18.5",
     "noddity-butler": "^1.1.2",
-    "noddity-linkifier": "^1.0.0",
+    "noddity-linkifier": "^2.0.0",
     "redisdown": "0.0.5",
     "sanitize-filename": "^1.0.1",
     "stringmap": "^0.2.2"
