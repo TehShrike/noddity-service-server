@@ -67,7 +67,7 @@ module.exports = function(serverImplementation) {
 
 	var closeServer = server.close.bind(server)
 
-	server.close = function closeRssaasServer() {
+	server.close = function closeServer() {
 		Object.keys(butlers.obj).forEach(function(key) {
 			var butler = butlers.get(key)
 			butler.stop()
