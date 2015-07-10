@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/TehShrike/noddity-service-server",
   "dependencies": {
-    "levelup": "^0.18.5",
-    "noddity-butler": "^1.1.2",
+    "levelup": "^1.2.1",
+    "noddity-butler": "^2.0.0",
     "noddity-linkifier": "^2.0.0",
-    "redisdown": "0.0.5",
+    "redisdown": "^0.1.7",
     "sanitize-filename": "^1.0.1",
     "stringmap": "^0.2.2"
   }
