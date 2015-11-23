@@ -4,8 +4,7 @@ var StringMap = require('stringmap')
 var Butler = require('noddity-butler')
 var sanitize = require("sanitize-filename")
 var Linkifier = require('noddity-linkifier')
-var levelup = require('levelup')
-var redisdown = require('redisdown')
+var level = require('level')
 
 function dumbResolve(firstThingy, secondThingy) {
 	var separator = '/'
@@ -26,11 +25,7 @@ module.exports = function(serverImplementation) {
 	function getAppropriateButler(rootUrl) {
 		if (!butlers.has(rootUrl)) {
 			var prefix = process.env.BRANCH || 'noddity-service-server-2'
-			var db = levelup(prefix + sanitize(rootUrl), {
-				db: redisdown,
-				host: 'localhost',
-				port: 6379
-			})
+			var db = level(prefix + sanitize(rootUrl))
 			var butler = new Butler(rootUrl, db)
 			butlers.set(rootUrl, butler)
 		}
