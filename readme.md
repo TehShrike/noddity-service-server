@@ -54,3 +54,6 @@ I like to launch these services with [ploy](https://github.com/substack/ploy).  
 	var thisParticularImplementation = require('./index.js')
 	noddityServer(thisParticularImplementation).listen(process.env.PORT)
 
+
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/TehShrike/noddity-service-server.svg)](https://greenkeeper.io/)
